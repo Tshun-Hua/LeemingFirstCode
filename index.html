@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>江春華 Cheng Chhuonhor - 個人介紹</title>
+
+  <style>
+    /* 全站設定 */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px 30px;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* 個人資料區 */
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* 個人照片（大頭貼） */
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+      margin-right: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    /* 四張照片的相簿區塊 */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      margin-top: 30px;
+      border-left: 4px solid #4a90e2;
+      padding-left: 10px;
+      color: #4a4a4a;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>江春華 Cheng Chhuonhor - 個人介紹</h1>
+    </header>
+
+    <!-- 個人資料區 -->
+    <section class="profile">
+      <img src="images/main.jpg" alt="個人照片" class="profile-img">
+      <div>
+        <p>大家好，我是江春華，來自柬埔寨，今年25歲。我熱愛音樂創作，特別是電子音樂。
+        音樂對我來說不只是興趣，更是表達自我的方式。我來到台灣，希望能體驗在地文化，
+        認識當地朋友，並學習台語。希望能用音樂連結不同文化，創造出屬於我們共同的聲音。</p>
+      </div>
+    </section>
+
+    <!-- 四張個人照片展示 -->
+    <h2>📸 個人照片集</h2>
+    <div class="photo-gallery">
+      <img src="images/hor1.jpg" alt="照片1">
+      <img src="images/hor2.jpg" alt="照片2">
+      <img src="images/hor3.jpg" alt="照片3">
+      <img src="images/hor4.jpg" alt="照片4">
+    </div>
+
+  </div>
+</body>
+</html>
