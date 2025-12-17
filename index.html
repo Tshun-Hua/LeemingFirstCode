@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -6,164 +5,313 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>江春華 Cheng Chhuonhor - 個人介紹</title>
 
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="江春華 Cheng Chhuonhor 的個人介紹，電子音樂創作與聯絡資訊。">
+  <meta property="og:title" content="江春華 Cheng Chhuonhor - 個人介紹">
+  <meta property="og:description" content="來自柬埔寨的電子音樂創作者，分享音樂作品與個人生活。">
+  <meta property="og:image" content="images/main.jpg">
+  <meta property="og:type" content="website">
+
   <style>
-    /* 全站設定 */
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
       color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    a { color: #4a90e2; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     .container {
-      width: 80%;
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating notes */
+    .note {
+      position: absolute;
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      animation: floatNote 12s linear infinite;
+    }
+    @keyframes floatNote {
+      0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: translateY(50vh) translateX(50px) rotate(180deg); }
+      100% { transform: translateY(-20vh) translateX(-50px) rotate(360deg); opacity: 0; }
     }
 
     header h1 {
+      font-family: 'Georgia', serif;
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #333;
+      font-size: 3rem;
+      color: #222;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
     }
 
-    /* 個人資料區 */
+    /* Profile */
     .profile {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      gap: 30px;
+      margin-bottom: 50px;
     }
 
-    /* 個人照片（大頭貼） */
     .profile img {
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ddd;
-      margin-right: 20px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border: 5px solid #4a90e2;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease;
+      perspective: 1000px;
     }
 
-    /* 四張照片的相簿區塊 */
+    .profile img:hover {
+      transform: rotateY(10deg) rotateX(5deg) scale(1.08);
+    }
+
+    .profile-text {
+      flex: 1;
+      font-size: 1.15rem;
+      color: #444;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      color: #4a90e2;
+      margin-bottom: 25px;
+      border-left: 5px solid #4a90e2;
+      padding-left: 15px;
+    }
+
+    /* Photo gallery */
     .photo-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
     }
 
     .photo-gallery img {
       width: 100%;
-      height: 150px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.15);
-      transition: transform 0.2s;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
     .photo-gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1) translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     }
 
-    h2 {
-      margin-top: 30px;
-      border-left: 4px solid #4a90e2;
-      padding-left: 10px;
-      color: #4a4a4a;
-    }
-
-    /* 聯絡資訊區 */
+    /* Contact info */
     .contact-info {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-top: 30px;
+      background: rgba(245, 247, 250, 0.95);
+      padding: 30px 35px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
     }
 
     .contact-info h3 {
-      margin-bottom: 15px;
+      font-size: 1.6rem;
       color: #4a90e2;
+      margin-bottom: 18px;
     }
 
-    .contact-info p {
-      margin: 10px 0;
+    .contact-info p, .contact-info address {
       font-size: 1rem;
+      margin-bottom: 10px;
+      color: #555;
     }
 
-    .contact-info a {
-      color: #4a90e2;
-      text-decoration: none;
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .social-links a img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .social-links a img:hover {
+      transform: scale(1.25) rotate(-5deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    /* Music Player */
+    .music-player {
+      background: rgba(240, 240, 255, 0.9);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .waveform {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 2px;
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .waveform div {
+      width: 4px;
+      height: 100%;
+      background: #4a90e2;
+      animation: wave 1s infinite ease-in-out;
+    }
+
+    .waveform div:nth-child(1) { animation-delay: 0s; }
+    .waveform div:nth-child(2) { animation-delay: 0.1s; }
+    .waveform div:nth-child(3) { animation-delay: 0.2s; }
+    .waveform div:nth-child(4) { animation-delay: 0.3s; }
+    .waveform div:nth-child(5) { animation-delay: 0.4s; }
+    .waveform div:nth-child(6) { animation-delay: 0.5s; }
+    .waveform div:nth-child(7) { animation-delay: 0.6s; }
+
+    @keyframes wave {
+      0%, 100% { transform: scaleY(0.2); }
+      50% { transform: scaleY(1); }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .profile { flex-direction: column; text-align: center; }
+      .profile img { margin: 0 auto; }
+      .profile-text { margin-top: 20px; }
+      .waveform { height: 35px; }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
+
+    <!-- Floating music notes -->
+    <div class="note" style="left:10%;">🎵</div>
+    <div class="note" style="left:25%; animation-duration:15s;">🎶</div>
+    <div class="note" style="left:40%; animation-duration:18s;">🎹</div>
+    <div class="note" style="left:60%; animation-duration:12s;">🎧</div>
+    <div class="note" style="left:75%; animation-duration:20s;">🎼</div>
+    <div class="note" style="left:85%; animation-duration:14s;">🎵</div>
+
     <header>
-      <h1>江春華 Cheng Chhuonhor - 個人介紹</h1>
+      <h1>江春華 Cheng Chhuonhor</h1>
     </header>
 
-    <!-- 個人資料區 -->
     <section class="profile">
-      <img src="images/main.jpg" alt="個人照片" class="profile-img">
-      <div>
+      <img src="images/main.jpg" alt="江春華個人照片">
+      <div class="profile-text">
         <p>大家好，我是江春華，來自柬埔寨，今年25歲。我熱愛音樂創作，特別是電子音樂。
         音樂對我來說不只是興趣，更是表達自我的方式。我來到台灣，希望能體驗在地文化，認識當地朋友，
         並學習台語。希望能用音樂連結不同文化，創造出屬於我們共同的聲音。</p>
       </div>
     </section>
 
-    <!-- 四張個人照片展示 -->
+    <!-- Music Player Section -->
+    <section class="music-player">
+      <div class="waveform">
+        <div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+      </div>
+      <audio controls>
+        <source src="music/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
     <h2>📸 個人照片集</h2>
     <div class="photo-gallery">
-      <img src="images/hor1.jpg" alt="照片1">
-      <img src="images/hor2.jpg" alt="照片2">
-      <img src="images/hor3.jpg" alt="照片3">
-      <img src="images/hor4.jpg" alt="照片4">
+      <img src="images/hor1.jpg" alt="江春華照片1">
+      <img src="images/hor2.jpg" alt="江春華照片2">
+      <img src="images/hor3.jpg" alt="江春華照片3">
+      <img src="images/hor4.jpg" alt="江春華照片4">
     </div>
 
-    <!-- 聯絡資訊區 -->
-    <div class="contact-info">
+    <section class="contact-info">
       <h3>📞 聯絡資訊</h3>
-      <p><strong>地址:</strong> 柬埔寨金邊市博森芷區宗周分區百蝶一村2號</p>
-      <p><strong>電話:</strong> <a href="tel:+886989692393">+886 989 692 393</a></p>
-      <p><strong>電子郵件:</strong> <a href="mailto:chhuonhorcheng@gmail.com">chhuonhorcheng@gmail.com</a></p>
-<!-- 社交媒體 / 音樂平台 -->
-<h3>📱 社交媒體 / 音樂平台</h3>
-<div class="social-links">
-  <a href="https://www.instagram.com/_huage_/" target="_blank" rel="noopener">
-    <img src="images/instagram.png" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/ChunHuaXD" target="_blank" rel="noopener">
-    <img src="images/facebook.png" alt="Facebook">
-  </a>
-  <a href="https://www.youtube.com/@ChunHuaConc3tto-ឈុនហ័រ" target="_blank" rel="noopener">
-    <img src="images/youtube.png" alt="YouTube">
-  </a>
-  <a href="https://open.spotify.com/artist/1eLTmGpifsiX7NKhdbv86m" target="_blank" rel="noopener">
-    <img src="images/spotify.png" alt="Spotify">
-  </a>
-  <a href="https://music.apple.com/us/artist/chunhua-conc3tto-ឈ-នហ-រ/1805477091" target="_blank" rel="noopener">
-    <img src="images/apple music.png" alt="Apple Music">
-  </a>
-  <a href="https://www.tiktok.com/@chunhuage" target="_blank" rel="noopener">
-    <img src="images/tiktok.png" alt="TikTok">
-  </a>
-  <a href="https://line.me/ti/p/~horhor078" target="_blank" rel="noopener">
-    <img src="images/line.png" alt="LINE">
-  </a>
-</div>
+      <address>
+        柬埔寨金邊市博森芷區宗周分區百蝶一村2號<br>
+        <a href="tel:+886989692393">+886 989 692 393</a><br>
+        <a href="mailto:chhuonhorcheng@gmail.com">chhuonhorcheng@gmail.com</a>
+      </address>
 
+      <h3>📱 社交媒體 / 音樂平台</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/_huage_/" target="_blank" rel="noopener">
+          <img src="images/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/ChunHuaXD" target="_blank" rel="noopener">
+          <img src="images/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@ChunHuaConc3tto-ឈុនហ័រ" target="_blank" rel="noopener">
+          <img src="images/youtube.png" alt="YouTube">
+        </a>
+        <a href="https://open.spotify.com/artist/1eLTmGpifsiX7NKhdbv86m" target="_blank" rel="noopener">
+          <img src="images/spotify.png" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/us/artist/chunhua-conc3tto-ឈ-នហ-រ/1805477091" target="_blank" rel="noopener">
+          <img src="images/apple-music.png" alt="Apple Music">
+        </a>
+        <a href="https://www.tiktok.com/@chunhuage" target="_blank" rel="noopener">
+          <img src="images/tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://line.me/ti/p/~horhor078" target="_blank" rel="noopener">
+          <img src="images/line.png" alt="LINE">
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 江春華 Cheng Chhuonhor. All Rights Reserved.
+    </footer>
+  </div>
 </body>
 </html>
