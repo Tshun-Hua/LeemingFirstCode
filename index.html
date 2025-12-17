@@ -145,20 +145,22 @@
     </audio>
   </div>
 
-  <!-- 更多歌曲，預設隱藏 -->
-  <div id="more-songs" style="display: none;">
-    <div class="audio-track">
+  <!-- 更多歌曲 -->
+  <div id="more-songs" class="more-songs">
+    <div class="audio-track hidden">
       <p>Song 2</p>
       <audio controls>
         <source src="audio/invisible-string.wav" type="audio/mpeg">
       </audio>
     </div>
-    <div class="audio-track">
+    <div class="audio-track hidden">
       <p>Song 3</p>
       <audio controls>
         <source src="audio/my-ride-or-die.wav" type="audio/mpeg">
       </audio>
     </div>
+    <!-- 可增加更多歌曲 -->
+  </div>
 
   <!-- 按鈕 -->
   <button id="see-more-btn">查看更多歌曲</button>
