@@ -135,10 +135,35 @@
     </section>
 <section class="music">
   <h2>🎵 我的音樂作品</h2>
-  <audio controls>
-    <source src="audio/unconditional.wav" type="audio/mpeg">
-    您的瀏覽器不支援播放音樂。
-  </audio>
+
+  <!-- 主歌曲 -->
+  <div class="audio-track">
+    <p>Unconditional</p>
+    <audio controls>
+      <source src="audio/unconditional.wav" type="audio/wav">
+      您的瀏覽器不支援播放音樂。
+    </audio>
+  </div>
+
+  <!-- 更多歌曲，預設隱藏 -->
+  <div id="more-songs" style="display: none;">
+    <div class="audio-track">
+      <p>Song 2</p>
+      <audio controls>
+        <source src="audio/song2.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="audio-track">
+      <p>Song 3</p>
+      <audio controls>
+        <source src="audio/song3.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <!-- 你可以加更多歌曲 -->
+  </div>
+
+  <!-- 按鈕 -->
+  <button id="see-more-btn">查看更多歌曲</button>
 </section>
     <!-- 聯絡資訊區 -->
     <div class="contact-info">
